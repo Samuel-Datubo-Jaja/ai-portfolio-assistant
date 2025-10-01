@@ -42,7 +42,7 @@ export default function ChatWidget() {
 
         try {
             // Update this URL to your deployed backend
-            const response = await fetch('http://localhost:8000/chat', {
+            const response = await fetch('ai-portfolio-assistant-production.up.railway.app/chat', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
