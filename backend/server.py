@@ -17,7 +17,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "https://samueljaja.com", 
-        "https://www.samueljaja.com".
+        "https://www.samueljaja.com",
         "https://samueljaja-gofl0qnlr-samuel-jajas-projects.vercel.app", 
         "http://localhost:3000"
         ],
