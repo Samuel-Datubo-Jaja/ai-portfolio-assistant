@@ -97,12 +97,12 @@ export default function Home() {
                   period="Jan 2022 - Dec 2024"
                   description="Developed enterprise-grade backend services with 40% cost savings. Enabled 70% platform growth through efficient architectures."
                 />
-                <ExperienceItem
+                {/* <ExperienceItem
                   title="Production Assistant"
                   company="Cranswick Convenience Foods"
                   period="Aug 2024 - Present"
                   description="UK workplace experience ensuring data accuracy and compliance."
-                />
+                /> */}
               </div>
             </div>
 
