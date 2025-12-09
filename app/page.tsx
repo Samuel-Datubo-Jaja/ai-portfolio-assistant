@@ -1,6 +1,9 @@
+'use client';
+
 import Link from 'next/link';
 import ChatWidget from './components/ChatWidget';
 import type { ReactNode } from 'react';
+import { useState } from 'react';
 
 function ExperienceItem({ title, company, period, description }: { title: string; company: string; period: string; description: string }) {
   return (
@@ -13,6 +16,7 @@ function ExperienceItem({ title, company, period, description }: { title: string
 }
 
 export default function Home(): ReactNode {
+  const [showAllProjects, setShowAllProjects] = useState(false);
   return (
   <main className="min-h-screen bg-white">
       {/* Navigation */}
@@ -23,8 +27,8 @@ export default function Home(): ReactNode {
             <Link href="#projects" className="font-semibold text-sky-900 hover:text-sky-500 transition">Projects</Link>
             <Link href="/blog" className="font-semibold text-sky-900 hover:text-sky-500 transition">Blog</Link>
             <Link href="/services" className="font-semibold text-sky-900 hover:text-sky-500 transition">Services</Link>
-            <Link href="#about" className="font-semibold text-sky-900 hover:text-sky-500 transition">About</Link>
-            <a href="https://github.com/Samuel-Datubo-Jaja" className="font-semibold text-sky-900 hover:text-sky-500 transition">GitHub</a>
+            <Link href="/contact" className="font-semibold text-sky-900 hover:text-sky-500 transition">Contact</Link>
+            <a href="https://github.com/Samuel-Jaja" className="font-semibold text-sky-900 hover:text-sky-500 transition">GitHub</a>
           </div>
         </div>
       </nav>
@@ -41,7 +45,7 @@ export default function Home(): ReactNode {
           <div className="text-center sm:text-left">
             <h1 className="text-4xl sm:text-5xl font-bold mb-4 text-gray-900">Samuel Jaja</h1>
             <h2 className="text-xl sm:text-2xl text-gray-600 mb-6">
-              ML/GenAI Software Engineer | Multi-Cloud(AWS First)
+              AI/ML Software Engineer | Multi-Cloud(AWS First)
             </h2>
             <p className="text-base sm:text-lg text-gray-700 mb-8 max-w-3xl">
               AI/ML Systems Engineer and Full-Stack Developer with 5+ years of experience building
@@ -54,23 +58,29 @@ export default function Home(): ReactNode {
               driven applications. Passionate about creating production-ready, explainable, and
               compliant AI systems that improve human-computer interaction.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center sm:justify-start">
-              <a 
-                href="https://www.linkedin.com/in/samuel-jaja/" 
-                className="bg-sky-500 text-white px-6 py-3 rounded-lg hover:bg-sky-600 shadow-md transition"
+            <div className="flex flex-col sm:flex-row gap-4 justify-center sm:justify-start flex-wrap">
+              <a
+                href="https://www.linkedin.com/in/samuel-jaja/"
+                className="bg-sky-500 text-white px-6 py-3 rounded-lg hover:bg-sky-600 shadow-md transition text-center"
               >
                 LinkedIn
               </a>
-              <a 
-                href="https://github.com/Samuel-Datubo-Jaja" 
-                className="border border-sky-400 text-sky-700 px-6 py-3 rounded-lg hover:bg-sky-50 hover:border-sky-600 shadow-md transition"
+              <a
+                href="https://github.com/Samuel-Jaja"
+                className="border border-sky-400 text-sky-700 px-6 py-3 rounded-lg hover:bg-sky-50 hover:border-sky-600 shadow-md transition text-center"
               >
-                GitHub
+                GitHub (SWE)
+              </a>
+              <a
+                href="https://github.com/Samuel-Datubo-Jaja"
+                className="border border-sky-400 text-sky-700 px-6 py-3 rounded-lg hover:bg-sky-50 hover:border-sky-600 shadow-md transition text-center"
+              >
+                GitHub (AI/ML)
               </a>
               <a
                 href="/Samuel Jaja_cv_2025_12mldon.pdf"
                 download
-                className="bg-sky-500 text-white px-6 py-3 rounded-lg hover:bg-sky-600 shadow-md transition"
+                className="bg-sky-500 text-white px-6 py-3 rounded-lg hover:bg-sky-600 shadow-md transition text-center"
               >
                 Download CV
               </a>
@@ -82,7 +92,18 @@ export default function Home(): ReactNode {
       {/* Projects Section */}
   <section id="projects" className="bg-sky-50 py-20">
         <div className="max-w-5xl mx-auto px-6">
-          <h2 className="text-3xl font-bold mb-10 text-black">Featured Projects</h2>
+          <h2 className="text-3xl font-bold mb-4 text-black">Featured Projects</h2>
+          <p className="text-gray-700 mb-10 max-w-3xl">
+            A selection of production AI systems, machine learning projects, and data science work.
+            View all repositories on{' '}
+            <a href="https://github.com/Samuel-Jaja" className="text-blue-600 hover:underline font-semibold">
+              GitHub (SWE)
+            </a>
+            {' '}and{' '}
+            <a href="https://github.com/Samuel-Datubo-Jaja" className="text-blue-600 hover:underline font-semibold">
+              GitHub (AI/ML/Cloud/Data Science/Engineering)
+            </a>.
+          </p>
           <div className="grid md:grid-cols-2 gap-8">
             <ProjectCard
               title="RevGeni CRM – AI-Powered Sales Pipeline"
@@ -106,20 +127,45 @@ export default function Home(): ReactNode {
               title="AI Digital Twin – Production Serverless Architecture"
               description="Built full-stack production AI system using serverless AWS (Lambda, API Gateway, Bedrock, CloudFront). Achieved <200ms global response times with Terraform IaC and automated CI/CD."
               tech={["FastAPI", "AWS Bedrock", "Terraform", "Next.js"]}
-              link="/projects/digital-twin"
+              link="https://github.com/Samuel-Datubo-Jaja/ai-digital-twin"
             />
+            
             <ProjectCard
+                  title="UK Road Traffic Accident Analysis - Big Data & Mining Project"
+                  description="Led an in-depth analysis of UK road traffic accident data using advanced data mining techniques to identify patterns, predict future accident occurrences, and provide actionable safety recommendations. This comprehensive project combined temporal analysis, geographical clustering, association rule mining, and time series forecasting."
+                  tech={["Python", "BERT", "Transformers", "PyTorch", "Pandas", "Numpy"]}
+                  link="https://github.com/Samuel-Datubo-Jaja/uk-road-traffic-accident-analysis"
+                />
+            <ProjectCard
+              title="News Article Classification - Machine Learning & Deep Learning"
+              description="I implemented and compared multiple text classification models for categorizing news articles into World, Sports, Business, and Sci/Tech categories. Developed a comprehensive solution using traditional machine learning approaches (Naive Bayes, Random Forest) and deep learning models (LSTM, Bi-LSTM)."
+              tech={["Python", "Transformers", "TensorFlow", "Random Forest", "scikit-learn", " NLTK"]}
+              link="https://github.com/Samuel-Datubo-Jaja/nlp-news-classification-ml-dl-project"
+            />
+            {showAllProjects && (
+              <>
+                <ProjectCard
               title="MCP-Agentic-TraderNet"
               description="Autonomous multi-agent trading system with real-time market data integration, AI research tools, and strategy memory for acting on trading opportunities."
               tech={["Python", "CrewAI", "MCP", "Real-time Data"]}
-              link="/projects/tradernet"
+              link="https://github.com/Samuel-Datubo-Jaja/MCP-Agentic-TraderNet"
             />
-            <ProjectCard
-              title="RAG Document QA System"
-              description="Production-grade document question-answering system using AWS Bedrock and LangChain for intelligent document retrieval and analysis."
-              tech={["AWS Bedrock", "LangChain", "Python", "FastAPI"]}
-              link="/projects/rag-qa"
-            />
+                <ProjectCard
+                  title="UK 2021 Census Data Science & Analysis Project"
+                  description="This project includes aspects such as cleaning data, analyzing them and making recommendations to local government concerning land development as well as investment decision. The analysis looked at age distribution patterns, unemployment trends, religious groups, married individuals and divorcees, house occupancy rates, immigration and emigration rates, birth rates, death rates, number of university students, and commuters. Through careful analysis, the report suggests/ranks constructing a train station for the significant 50.53% of the population and investing in employment and training programs based on an unemployment rate above 8%."
+                  tech={["Python", "scikit-learn", "Pandas", "Numpy", "PyTorch"]}
+                  link="https://github.com/Samuel-Datubo-Jaja/uk-2021-census--project"
+                />
+              </>
+            )}
+          </div>
+          <div className="text-center mt-10">
+            <button
+              onClick={() => setShowAllProjects(!showAllProjects)}
+              className="bg-sky-600 text-white px-8 py-3 rounded-lg hover:bg-sky-700 transition font-semibold shadow-md"
+            >
+              {showAllProjects ? 'Show Less Projects' : 'View All Projects'}
+            </button>
           </div>
         </div>
       </section>
@@ -133,8 +179,23 @@ export default function Home(): ReactNode {
               <h3 className="text-xl font-bold mb-4 text-sky-900">Experience</h3>
               <div className="space-y-6">
                 <ExperienceItem
+                  title="AI Associate"
+                  company="GW Power-Safe, UK"
+                  period="Current"
+                  description="Design and implement AI-driven solutions to enhance company
+                                workflows by streamlining procedures, integrating systems, and
+                                automating processes.
+                                Support the testing, evaluation, and refinement of AI agents to
+                                strengthen risk identification and management.
+                                Maintain and enhance reporting tools, ensuring accuracy, usability, and
+                                efficiency.
+                                Collaborate with non-technical staff to understand business
+                                requirements and translate them into AI-enabled workflows and
+                                solutions."
+                />
+                <ExperienceItem
                   title="Full-stack | R&D Software Engineer"
-                  company="CypherCrescent"
+                  company="CypherCrescent, Nigeria"
                   period="Jan 2022 - Dec 2024"
                   description="Developed enterprise-grade backend services with 40% cost savings. Enabled 70% platform growth through efficient architectures. Event-Driven Design: Implemented CQRS pattern with MediatR for command/query
                                 separation and event notifications, enabling loosely coupled microservices
@@ -152,9 +213,9 @@ export default function Home(): ReactNode {
             <div>
               <h3 className="text-xl font-bold mb-4 text-sky-900">Education & Certifications</h3>
               <div className="space-y-4">
-                 <div>
-                  <p className="font-bold text-sky-900">PhD in View (AI & Carbon Accounting)</p>
-                </div>
+                 {/* <div>
+                  <p className="font-bold text-sky-900">PhD in View (AI in Energy Management & Sustainability)</p>
+                </div> */}
                 <div>
                   <p className="font-bold text-sky-900">MSc. Artificial Intelligence & Data Science (Distinction)</p>
                   <p className="text-sky-700">University of Hull, UK</p>
