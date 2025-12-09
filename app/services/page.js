@@ -5,14 +5,14 @@ export default function ServicesPage() {
   return (
     <main className="min-h-screen bg-white">
       <nav className="border-b">
-        <div className="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
-          <Link href="/" className="text-xl font-bold">Samuel Jaja</Link>
-          <div className="space-x-6">
-            <Link href="/#projects" className="hover:text-blue-600">Projects</Link>
-            <Link href="/blog" className="hover:text-blue-600">Blog</Link>
-            <Link href="/services" className="text-blue-600 font-semibold">Services</Link>
-            <Link href="/#about" className="hover:text-blue-600">About</Link>
-            <a href="https://github.com/Samuel-Datubo-Jaja" className="hover:text-blue-600">GitHub</a>
+        <div className="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center bg-white">
+          <Link href="/" className="text-xl font-bold text-sky-900">Samuel Jaja</Link>
+          <div className="space-x-6 flex items-center">
+            <Link href="/#projects" className="font-semibold text-sky-900 hover:text-sky-500 transition">Projects</Link>
+            <Link href="/blog" className="font-semibold text-sky-900 hover:text-sky-500 transition">Blog</Link>
+            <Link href="/services" className="font-semibold text-blue-600">Services</Link>
+            <Link href="/contact" className="font-semibold text-sky-900 hover:text-sky-500 transition">Contact</Link>
+            <a href="https://github.com/Samuel-Jaja" className="font-semibold text-sky-900 hover:text-sky-500 transition">GitHub</a>
           </div>
         </div>
       </nav>
@@ -24,7 +24,7 @@ export default function ServicesPage() {
           </span>
         </div>
         
-        <h1 className="text-5xl font-bold mb-6 text-gray-900">AI Automation Services</h1>
+        <h1 className="text-5xl font-bold mb-6 text-gray-900">Atlasync Presents AI Automation Services</h1>
         
         <p className="text-xl text-gray-600 mb-12">
           Enterprise AI solutions and automation services launching soon. 
@@ -63,7 +63,7 @@ export default function ServicesPage() {
       </section>
 
       <footer className="border-t py-8">
-        <div className="max-w-5xl mx-auto px-6 text-center text-gray-600">
+        <div className="max-w-5xl mx-auto px-6 text-center text-sky-900 font-bold bg-white">
           <p>© 2025 Samuel Jaja.</p>
         </div>
       </footer>
