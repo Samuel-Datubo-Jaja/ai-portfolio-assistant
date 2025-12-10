@@ -22,7 +22,7 @@ export default function ContactPage() {
         <div className="text-center mb-16">
           <h1 className="text-5xl font-bold mb-4 text-gray-900">Get In Touch</h1>
           <p className="text-xl text-gray-700 max-w-2xl mx-auto">
-            Interested in AI automation, consulting, or collaboration? I'd love to hear from you.
+            Interested in AI automation, consulting, or collaboration? I will love to hear from you.
           </p>
         </div>
 
@@ -106,7 +106,6 @@ export default function ContactPage() {
                 <ul className="text-green-800 text-sm space-y-1">
                   <li>• AI/ML Consulting</li>
                   <li>• RAG System Development</li>
-                  <li>• LLM Fine-tuning Projects</li>
                   <li>• Cloud Architecture (AWS/Azure)</li>
                   <li>• Technical Advisory</li>
                 </ul>

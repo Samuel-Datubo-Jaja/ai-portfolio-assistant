@@ -138,7 +138,7 @@ export default function ContactForm() {
         {status === 'success' && (
           <div className="bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg">
             <p className="font-semibold">Message sent successfully!</p>
-            <p className="text-sm">I'll get back to you as soon as possible.</p>
+            <p className="text-sm">I will get back to you as soon as possible.</p>
           </div>
         )}
 
